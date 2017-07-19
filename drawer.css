@@ -1,0 +1,22 @@
+#drawer_js {
+	margin: 0;
+	padding: 0;
+	display: block;
+
+	position: fixed;
+	/*left: 0;*/
+	left: -300px;
+	top: 0;
+	width: 280px;
+	height: 100%;
+
+	background-color: #FFF;
+}
+
+/* body temporal */
+
+body, html {
+	background-color: lightcoral;
+	box-sizing: border-box;
+	height: 100%;
+}
