@@ -6,6 +6,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.bindListener();
 			this.draggAvalible = false;
 		},
+		setTriggerStatus: function() { try {
+
+			if (this.$drawer.classList.contains('actived')) {
+				this.$trigger.classList.add('drawer_actived');
+			} else {
+				this.$trigger.classList.remove('drawer_actived');
+			}
+
+		} catch (err){} },
 		draggingMenu: function(e) {
 			this.posX = e.touches[0].clientX
 			if (this.draggAvalible && this.posX < 300 && this.draggAvalible) {
@@ -50,6 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				this.draggAvalible = false;
 			}
 
+			this.setTriggerStatus();
+
 			setTimeout(function() {
 				Drawer.$drawer.style.transition = 'none';
 				Drawer.$modal.style.transition = 'none';
@@ -73,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				this.$modal.style.opacity = '1';
 			}
 
+			this.setTriggerStatus();
+
 			setTimeout(function() {
 				Drawer.$drawer.style.transition = 'none';
 				Drawer.$modal.style.transition = 'none';
@@ -84,14 +97,14 @@ document.addEventListener('DOMContentLoaded', function() {
 			window.addEventListener('touchmove', this.draggingMenu.bind(this));
 			try {
 				this.$trigger.addEventListener('click', this.controlDrawer.bind(this));
-			} catch (err) { console.log(err) }
+			} catch (err){}
 		},
 		cacheDOM: function() {
 			this.$drawer = document.getElementById('drawer_js');
 			this.$modal = document.querySelector('.__modal_drawer');
 			try {
 				this.$trigger = document.getElementById('drawer_trgger');
-			} catch (err) { console.log(err) }
+			} catch (err){}
 		}
 	};
 
