@@ -1,5 +1,5 @@
 # MagicDrawer
-You can find an example on [this link](https://codepen.io/elimparable/pen/VWoZbg).
+You can find an example on [this link](https://codepen.io/elimparable/pen/VWoZbg) (only works on mobiles).
 ## Use
 for use only need embed the next HTML on your web page:
 
