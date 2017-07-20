@@ -11,8 +11,19 @@
 	height: 100%;
 
 	background-color: #FFF;
+	z-index: 999;
 }
-
+.__modal_drawer {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 998;
+	display: none;
+	opacity: 0;
+}
 /* body temporal */
 
 body, html {
