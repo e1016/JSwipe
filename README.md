@@ -16,6 +16,8 @@ For use a custom trigger only create an element with the next ```id```
 ```HTML
 <element id="drawer_trgger"></element>
 ```
+
 No matter the element type, it's sufficient if it contains said id.
+
 ----------
 For use it only download drawer.js and drawer.css and link to your web, good luck : )
