@@ -137,7 +137,11 @@ let Drawer = {
 				if ( item.action ) {
 					console.log( typeof item.action )
 					if ( typeof item.action === 'string' ) {
-
+						// crear el <a>
+					} else if ( typeof item.action === 'function' ) {
+						// bind to function
+					} else {
+						console.warn( `"${item.label}" can´t be binded to ${item.action}... we expected a function or string as a parameter` )
 					}
 				}
 
@@ -185,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},{
 			icon: 'share',
 			label: 'Compartir',
-			action: share
+			action: 34
 		},{
 			separator: 'setings'
 		},{
