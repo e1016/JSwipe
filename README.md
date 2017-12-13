@@ -8,9 +8,11 @@ for use only need embed the next HTML on your web page:
 <div id="drawer_js"></div> <!-- 2 -->
 ```
 1. This element is an opaque background, works as a protector for the content and helps to highlight the drawer.
+
 2. It is literally the wrapper, inside of this you can push all the content for the drawer
 
 ----------
+
 ## Button trigger
 For use a custom trigger only create an element with the next ```id```
 ```HTML
