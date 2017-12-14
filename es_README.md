@@ -3,6 +3,10 @@
 
 Crea un bonito y práctico nav drawer facilmente
 
+Uso desde GitHub
+* https://e1016.github.io/Swiper-Drawer/drawer.js
+* https://e1016.github.io/Swiper-Drawer/drawer.css
+
 ## Requerimientos
 
 Para el correcto funcionamiento es necesario cargar los [material icons](https://material.io/icons/) y la fuente [Roboto](https://fonts.google.com/specimen/Roboto) puedes revisar aquí: https://e1016.github.io/Swiper-Drawer/ un ejemplo, los gestos solo funcionan en **dispositivos móviles**
@@ -107,3 +111,4 @@ es posible incluir un botón que despliegue el drawer, añadiendo el id **mdrawe
 ```HTML
 <button id="mdrawer_trgger">menú</button>
 ```
+
