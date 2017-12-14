@@ -1,9 +1,7 @@
 
 function share () {
-
+	console.log( 'uuuhhhh!' )
 }
-
-console.log( typeof share === 'function' )
 
 let Drawer = {
 	init ( bundle ) {
@@ -12,7 +10,6 @@ let Drawer = {
 		this.draggAvalible = false;
 		if ( bundle ) {
 			let type = typeof bundle
-			console.log( type === 'object' )
 			if ( type === 'object' ) {
 				this.renderPrepare( bundle.main );
 				this.renderHeader( bundle.main );
@@ -103,7 +100,7 @@ let Drawer = {
 			this.$modal.style.transition = 'none';
 		}, 200);
 	},
-	renderPrepare() {
+	renderPrepare () {
 		this.$drawer.innerHTML = `
 			<div class="__header"></div>
 			<div class="__menu"></div>
@@ -111,7 +108,7 @@ let Drawer = {
 		this.$_header = this.$drawer.querySelector('.__header');
 		this.$_menu = this.$drawer.querySelector('.__menu');
 	},
-	renderHeader( bundle ) {
+	renderHeader ( bundle ) {
 		this.$_header.setAttribute('style', `background-image: url('${ bundle.background }')`)
 		this.$_header.innerHTML = `
 			<span class="__user_photo" style="background-image: url('${ bundle.photo }')"></span>
@@ -119,61 +116,73 @@ let Drawer = {
 			<span class="__sub_title">${ bundle.subtitle }</span>
 		`;
 	},
-	renderOptions( bundle ) {
+	renderOptions ( bundle ) {
 
-		console.log( bundle )
+		let itemTemporal = '';
+		bundle.forEach( ( item, index ) => {
 
-		this.$_menu.innerHTML = '<ul>';
-
-		bundle.forEach( item => {
-			let itemTemporal
 			if ( item.separator ) {
-				itemTemporal = `<hr> <p>${ item.separator }</p>`;
+				itemTemporal += `<li class="__menu_separator"><hr> <p>${ item.separator }</p></li>`;
 			} else {
-				itemTemporal = '<li>';
-
-				if ( item.icon ) { }
-				if ( item.label ) { }
-				if ( item.action ) {
-					console.log( typeof item.action )
-					if ( typeof item.action === 'string' ) {
-						// crear el <a>
-					} else if ( typeof item.action === 'function' ) {
-						// bind to function
+				itemTemporal += '<li>';
+				if ( item.icon && item.label && item.action ) {
+					
+					if ( item.action ) {
+						console.log( typeof item.action )
+						if ( typeof item.action === 'string' ) {
+							itemTemporal += `<a class="__menu_action" href="${item.action}">`
+						} else if ( typeof item.action === 'function' ) {
+							itemTemporal += `<a class="__menu_action" onclick="${ item.action.name }()">`
+						}
 					} else {
-						console.warn( `"${item.label}" can´t be binded to ${item.action}... we expected a function or string as a parameter` )
+						console.warn( `"${ item.label }" can´t be binded to ${ item.action }... we expected a function or string as a parameter` )
 					}
+
+					if ( item.icon ) {
+						itemTemporal += `<i class="material-icons __menu_icon">${item.icon.replace(/ /g, '_')}</i>`;
+					} else {
+						itemTemporal += `<i class="material-icons __menu_icon"></i>`;
+					}
+
+					if ( item.label ) {
+						itemTemporal += `<span class="__menu_item_label">${item.label}</span>`;
+					} else {
+						console.warn(`missing label on this item: ${item.route}`)
+						itemTemporal += `<span class="__menu_item_label" style="color: red;">label n/a</span>`;
+					}
+				} else {
+					console.error(`[MENÚ OPTIONS]: index ${ index + 1 } can't be created correctly`);
 				}
-
-				itemTemporal += '</li>';
+				itemTemporal += '</a></li>';
 			}
-		})
 
-		this.$_menu.innerHTML += '</ul>';
+		});
+
+		this.$_menu.innerHTML = '<ul class="__menu_items">' + itemTemporal + '</ul>';
 	},
-	bindListener() {
+	bindListener () {
 		window.addEventListener('touchstart', this.startDraggingMenu.bind(this));
 		window.addEventListener('touchend', this.disableDraggingMenu.bind(this));
 		window.addEventListener('touchmove', this.draggingMenu.bind(this));
+		this.$modal.addEventListener('click', this.controlDrawer.bind(this));
 		try {
 			this.$trigger.addEventListener('click', this.controlDrawer.bind(this));
-		} catch (err){}
+		} catch ( err ) {}
 	},
-	cacheDOM() {
+	cacheDOM () {
 		this.$drawer = document.getElementById('drawer_js');
 		this.$modal = document.querySelector('.__modal_drawer');
 		try {
-			this.$trigger = document.getElementById('drawer_trgger');
-		} catch (err){}
+			this.$trigger = document.getElementById('mdrawer_trgger');
+		} catch ( err ) {}
 	}
 };
 
-const param = 'jeje que once'
-
 document.addEventListener('DOMContentLoaded', function() {
+	
 	Drawer.init({
 		main: {
-			background: 'http://images6.fanpop.com/image/photos/40500000/How-I-met-your-Mother-the-00s-40533608-1920-1080.jpg',
+			background: 'https://i.pinimg.com/736x/ac/2f/b2/ac2fb2ad65afd557cdbd88bacfd3ef2f--wallpaper-himym.jpg',
 			photo: 'http://articlebio.com/uploads/bio/2016/09/16/cobie-smulders.jpg',
 			title: 'Cobi Smulders',
 			subtitle: 'exam@mail.com',
@@ -189,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},{
 			icon: 'share',
 			label: 'Compartir',
-			action: 34
+			action: share
 		},{
 			separator: 'setings'
 		},{

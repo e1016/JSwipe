@@ -53,11 +53,11 @@
 
 .__user_photo {
 	display: block;
-	width: 70px;
+	width: 60px;
 	margin-left: 30px;
 	margin-bottom: 10px;
 	z-index: 1;
-	height: 70px;
+	height: 60px;
 	border-radius: 50%;
 	background-position: center;
 	background-size: cover;
@@ -67,20 +67,20 @@
 	display: block;
 	color: white;
 	margin-left: 30px;
-	margin-bottom: 8px;
+	margin-bottom: 3px;
 	z-index: 1;
 	font-family: 'Roboto', sans-serif;
-	font-size: 27px;
+	font-size: 23px;
 }
 
 .__sub_title {
 	display: block;
 	color: white;
 	margin-left: 30px;
-	margin-bottom: 18px;
+	margin-bottom: 15px;
 	z-index: 1;
 	font-family: 'Roboto', sans-serif;
-	font-size: 19px;
+	font-size: 15px;
 	opacity: 0.8;
 }
 
@@ -91,12 +91,56 @@
 .__menu {
 	position: absolute;
 	top: 170px;
+	width: 100%;
+	height: calc(100vh - 170px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
 
+.__menu_items {
+	padding: 0;
+	padding-top: 20px;
+	list-style: none;
+	color: rgba(0, 0, 0, 0.8);
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.__menu_separator p {
+	padding-left: 20px;
+}
+
+.__menu_action {
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	padding: 11px 0 11px 18px;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+}
+
+.__menu_action * {
+	cursor: pointer;
+}
+.__menu_action:hover {
+	background-color: #E8E8E8;
+}
+
+.__menu_icon {
+	color: inherit;
+	margin-right: 25px;
+}
+
+.__menu_item_label {
+	font-size: 19px;
 }
 /* body temporal */
 
 body, html {
-	background-color: lightcoral;
+	background-color: rgba(113, 113, 113, 0.8);
 	box-sizing: border-box;
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
