@@ -124,7 +124,6 @@ let Drawer = {
 				if ( item.icon && item.label && item.action ) {
 					
 					if ( item.action ) {
-						console.log( typeof item.action )
 						if ( typeof item.action === 'string' ) {
 							itemTemporal += `<a class="__menu_action" href="${item.action}">`
 						} else if ( typeof item.action === 'function' ) {
