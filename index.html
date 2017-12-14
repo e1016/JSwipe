@@ -8,8 +8,10 @@
 	<link rel="stylesheet" type="text/css" href="sources/extra.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<script type="text/javascript" src="https://e1016.github.io/JSwipe/drawer.js"></script>
-	<link rel="stylesheet" href="https://e1016.github.io/JSwipe/drawer.css">
+	<!--script type="text/javascript" src="https://e1016.github.io/JSwipe/drawer.js"></script>
+	<link rel="stylesheet" href="https://e1016.github.io/JSwipe/drawer.css"-->
+	<script type="text/javascript" src="drawer.min.js"></script>
+	<link rel="stylesheet" href="drawer.min.css">
 </head>
 <body>
 	<span class="__modal_drawer"></span> <!-- opacity background modal -->
@@ -29,14 +31,14 @@
 </html>
 
 <script type="text/javascript">
-	
+
 	// define a function, for test menu item function binding
 	function share () {
-		
+
 		alert( 'You are sharing this wea china!' )
 
 	}
-	
+
 	// define our header section
 	let headerSection = {
 		background: 'sources/bg.jpg',
@@ -44,7 +46,7 @@
 		title: 'Cobie Smulders',
 		subtitle: 'exam@mail.com',
 	}
-	
+
 	// define our menu items
 	let menuItems = [{
 		icon: 'account_circle', // <- define material icon

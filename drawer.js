@@ -98,8 +98,8 @@ let Drawer = {
 	},
 	renderPrepare () {
 		this.$drawer.innerHTML = `
-			<div class="__header"></div>
-			<div class="__menu"></div>
+		<div class="__header"></div>
+		<div class="__menu"></div>
 		`;
 		this.$_header = this.$drawer.querySelector('.__header');
 		this.$_menu = this.$drawer.querySelector('.__menu');
@@ -107,9 +107,9 @@ let Drawer = {
 	renderHeader ( bundle ) {
 		this.$_header.setAttribute('style', `background-image: url('${ bundle.background }')`)
 		this.$_header.innerHTML = `
-			<span class="__user_photo" style="background-image: url('${ bundle.photo }')"></span>
-			<span class="__main_title">${ bundle.title }</span>
-			<span class="__sub_title">${ bundle.subtitle }</span>
+		<span class="__user_photo" style="background-image: url('${ bundle.photo }')"></span>
+		<span class="__main_title">${ bundle.title }</span>
+		<span class="__sub_title">${ bundle.subtitle }</span>
 		`;
 	},
 	renderOptions ( bundle ) {
@@ -122,7 +122,7 @@ let Drawer = {
 			} else {
 				itemTemporal += '<li>';
 				if ( item.icon && item.label && item.action ) {
-					
+
 					if ( item.action ) {
 						if ( typeof item.action === 'string' ) {
 							itemTemporal += `<a class="__menu_action" href="${item.action}">`
@@ -141,7 +141,7 @@ let Drawer = {
 
 					if ( item.label ) {
 						itemTemporal += `<span class="__menu_item_label">${item.label}</span>`;
-					} else {
+					} else { 
 						console.warn(`missing label on this item: ${item.route}`)
 						itemTemporal += `<span class="__menu_item_label" style="color: red;">label n/a</span>`;
 					}
