@@ -1,8 +1,4 @@
 
-function share () {
-	console.log( 'uuuhhhh!' )
-}
-
 let Drawer = {
 	init ( bundle ) {
 		this.cacheDOM();
@@ -177,34 +173,3 @@ let Drawer = {
 		} catch ( err ) {}
 	}
 };
-
-document.addEventListener('DOMContentLoaded', function() {
-	
-	Drawer.init({
-		main: {
-			background: 'https://i.pinimg.com/736x/ac/2f/b2/ac2fb2ad65afd557cdbd88bacfd3ef2f--wallpaper-himym.jpg',
-			photo: 'http://articlebio.com/uploads/bio/2016/09/16/cobie-smulders.jpg',
-			title: 'Cobi Smulders',
-			subtitle: 'exam@mail.com',
-		},
-		menu: [{
-			icon: 'account_circle',
-			label: 'Mi perfil',
-			action: '/profile'
-		},{
-			icon: 'favorite',
-			label: 'Favoritos',
-			action: '/profile'
-		},{
-			icon: 'share',
-			label: 'Compartir',
-			action: share
-		},{
-			separator: 'setings'
-		},{
-			icon: 'settings_applications',
-			label: 'ajustes',
-			action: '/profile'
-		}],
-	})
-});
