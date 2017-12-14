@@ -28,7 +28,7 @@ Para comenzar necesitaremos incluir 2 etiquetas en nuestro documento, estas serv
 
 ---
 
-Nuestro drawer se inicializa con el metodo `init` del objeto `Drawer`, y recive como parámetro un objeto con 2 nodos principales: seción de cabecera llamada `main` y items del menú llamados `menu`, ej.
+Nuestro drawer se inicializa con el metodo `init` del objeto `Drawer`, y recive como parámetro un objeto con 2 nodos principales: sección de cabecera llamada `main` y items del menú llamados `menu`, ej.
 
 ```JS
 Drawer.init({
@@ -68,12 +68,12 @@ menu: [{
 
 1. `icon:` recive un string con el nombre correspondiente del mismo en la librería de [material icons](https://material.io/icons/)
 2. `label:` recive un string con el nombre que queremos escribir en el item
-3. `action:` este elemento puede recivir una ruta o URL o una función a ejecutar con un click, ej. para asignar `function share() { ...` le asignamos el nombre de la función sin comillas ni parentesis, de forma que actúe como un apuntador a la misma, no es posible asignar funciones anónimas
+3. `action:` este elemento puede recivir una ruta o URL o una función a ejecutar con un click, ej. para asignar `function share() { ...` le asignamos el nombre de la función sin comillas ni paréntesis, de forma que actúe como un apuntador a la misma, no es posible asignar funciones anónimas
 4. `separator:` este nodo recive un string que utilizará como título de una sección
 
 ## Final
 
-Recapitulando, el hash que recive como parámetro `Drawer.init` de ser añadido directamente en el método se vería así:
+Recapitulando, el hash que recive como parámetro `Drawer.init` de ser añadido directamente en el método, se vería así:
 
 ```JS
 Drawer.init({
@@ -96,10 +96,10 @@ Drawer.init({
     label: 'Compartir',
     action: share
   },{
-    separator: 'setings'
+    separator: 'settings'
   },{
     icon: 'settings_applications',
-    label: 'ajustes',
+    label: 'Ajustes',
     action: '/profile'
   }]
 })
