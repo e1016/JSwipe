@@ -1,4 +1,4 @@
-# Swiper-Drawer
+# JSwipe
 ###### v 1.0
 
 ![Swipe Drawer Screenshot](screenshots/JSwipe.png "Swipe Drawer ss")
@@ -6,12 +6,12 @@
 Crea un bonito y práctico nav drawer facilmente
 
 Uso desde GitHub
-* https://e1016.github.io/Swiper-Drawer/drawer.js
-* https://e1016.github.io/Swiper-Drawer/drawer.css
+* https://e1016.github.io/JSwipe/drawer.js
+* https://e1016.github.io/JSwipe/drawer.css
 
 ## Requerimientos
 
-Para el correcto funcionamiento es necesario cargar los [material icons](https://material.io/icons/) y la fuente [Roboto](https://fonts.google.com/specimen/Roboto) puedes revisar aquí: https://e1016.github.io/Swiper-Drawer/ un ejemplo, los gestos solo funcionan en **dispositivos móviles**
+Para el correcto funcionamiento es necesario cargar los [material icons](https://material.io/icons/) y la fuente [Roboto](https://fonts.google.com/specimen/Roboto) puedes revisar aquí: https://e1016.github.io/JSwipe/ un ejemplo, los gestos solo funcionan en **dispositivos móviles**
 
 ![Swipe Drawer Screenshot](screenshots/ss.png "Swipe Drawer ss")
 ---
