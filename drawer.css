@@ -106,8 +106,13 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+.__menu_separator {
+	margin: 10px 0;
+}
+
 .__menu_separator p {
 	padding-left: 20px;
+	padding-top: 10px;
 }
 
 .__menu_action {
@@ -134,13 +139,4 @@
 
 .__menu_item_label {
 	font-size: 19px;
-}
-/* body temporal */
-
-body, html {
-	background-color: rgba(113, 113, 113, 0.8);
-	box-sizing: border-box;
-	height: 100%;
-	margin: 0;
-	padding: 0;
 }

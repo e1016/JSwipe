@@ -4,37 +4,52 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<meta charset="utf-8">
 	<title>Swipe Drawer</title>
+	<link rel="stylesheet" type="text/css" href="sources/extra.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script type="text/javascript" src="https://e1016.github.io/Swiper-Drawer/drawer.js"></script>
 	<link rel="stylesheet" href="https://e1016.github.io/Swiper-Drawer/drawer.css">
 </head>
 <body>
-	<span class="__modal_drawer"></span> <!-- 1 -->
-	<div id="drawer_js"></div> <!-- 2 -->
-	<button id="mdrawer_trgger">menú</button>
+	<span class="__modal_drawer"></span> <!-- opacity background modal -->
+	<div id="drawer_js"></div> <!-- drawer container -->
+	<button id="mdrawer_trgger">toggle menu</button>
+
+	<h1>
+		Swiper Drawer<br>
+		<small><small><small>
+			swipe from left edge of screen
+		</small></small></small>
+		<br><br>
+		<small><small><small><small>
+			<a href="https://github.com/e1016/Swiper-Drawer">fork this project in GitHub</a>
+		</small></small></small></small>
+	</h1>
 </body>
 </html>
 
 <script type="text/javascript">
 	
+	// define a function, for test menu item function binding
 	function share () {
 		
 		alert( 'You are sharing this wea china!' )
 
 	}
 	
+	// define our header section
 	let headerSection = {
-		background: 'sources/teds.jpg',
-		photo: 'sources/cobi-smulders.jpg',
-		title: 'Cobi Smulders',
+		background: 'sources/bg.jpg',
+		photo: 'sources/cobie-smulders.jpg',
+		title: 'Cobie Smulders',
 		subtitle: 'exam@mail.com',
 	}
 	
+	// define our menu items
 	let menuItems = [{
-		icon: 'account_circle',
-		label: 'Mi perfil',
-		action: '/profile'
+		icon: 'account_circle', // <- define material icon
+		label: 'Mi perfil', // <- define label for item
+		action: '/profile' // <- define URL
 	},{
 		icon: 'favorite',
 		label: 'Favoritos',
@@ -42,7 +57,7 @@
 	},{
 		icon: 'share',
 		label: 'Compartir',
-		action: share
+		action: share // <- define functrion that will be executed with click event
 	},{
 		separator: 'setings'
 	},{
@@ -51,11 +66,12 @@
 		action: '/profile'
 	}]
 
-	document.addEventListener('DOMContentLoaded', function() {
+	document.addEventListener('DOMContentLoaded', function() { // <- wait for load DOM
 
+		// initializing and setting our nav drawer
 		Drawer.init({
 			main: headerSection,
-			menu: menuItems,
+			menu: menuItems
 		})
 
 	})

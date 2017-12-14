@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* body temporal */
+
+body, html {
+	background: -webkit-linear-gradient(top left, #2196F3, #673AB7);
+	background-color: #2196F3;
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+#mdrawer_trgger {
+	padding: 6px 15px;
+	background: white;
+	color: black;
+	border: none;
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 19px;
+	font-weight: bold;
+	font-family: 'Roboto';
+	border-bottom: 3px solid gainsboro;
+}
+body >h1 {
+	text-align: center;
+	display: block;
+	width: 96vw;
+	color: white;
+	font-weight: normal;
+}
+
+body >h1 a {
+	color: #bff0ff;
+}
