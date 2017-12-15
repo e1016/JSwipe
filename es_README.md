@@ -5,9 +5,9 @@
 
 Crea un bonito y práctico nav drawer facilmente
 
-Uso desde GitHub
-* https://e1016.github.io/JSwipe/drawer.js
-* https://e1016.github.io/JSwipe/drawer.css
+Links directos:
+* https://e1016.github.io/JSwipe/drawer.min.js
+* https://e1016.github.io/JSwipe/drawer.min.css
 
 ## Requerimientos
 
@@ -39,7 +39,7 @@ Drawer.init({
 })
 
 ```
-el nodo `main` debe contener un objeto con los siguientes nodos
+El nodo `main` debe contener un objeto con los siguientes nodos
 
 ```JS
 main: {
@@ -50,7 +50,7 @@ main: {
 }
 ```
 
-y el nodo `menu` recive un arreglo de objetos, donde cada uno define un item
+El nodo `menu` recive un arreglo de objetos, donde cada uno define un item
 
 ```JS
 menu: [{
@@ -108,7 +108,7 @@ Drawer.init({
 ```
 ---
 
-es posible incluir un botón que despliegue el drawer, añadiendo el id **mdrawer_trgger** a cualquier etiqueta, en caso de desktop donde los geston no funcionan, o por simple comodidad
+Es posible incluir un botón que despliegue el drawer, añadiendo el id **mdrawer_trgger** a cualquier etiqueta, en caso de desktop donde los geston no funcionan, o por simple comodidad
 
 ```HTML
 <button id="mdrawer_trgger">menú</button>
