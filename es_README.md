@@ -50,7 +50,7 @@ main: {
 }
 ```
 
-El nodo `menu` recive un arreglo de objetos, donde cada uno define un item
+El nodo `menu` recibe un arreglo de objetos, donde cada uno define un item
 
 ```JS
 menu: [{
@@ -68,14 +68,14 @@ menu: [{
 }]
 ```
 
-1. `icon:` recive un string con el nombre correspondiente del mismo en la librería de [material icons](https://material.io/icons/)
-2. `label:` recive un string con el nombre que queremos escribir en el item
+1. `icon:` recibe un string con el nombre correspondiente del mismo en la librería de [material icons](https://material.io/icons/)
+2. `label:` recibe un string con el nombre que queremos escribir en el item
 3. `action:` este elemento puede recivir una ruta o URL o una función a ejecutar con un click, ej. para asignar `function share() { ...` le asignamos el nombre de la función sin comillas ni paréntesis, de forma que actúe como un apuntador a la misma, no es posible asignar funciones anónimas
-4. `separator:` este nodo recive un string que utilizará como título de una sección
+4. `separator:` este nodo recibe un string que utilizará como título de una sección
 
 ## Final
 
-Recapitulando, el hash que recive como parámetro `Drawer.init` de ser añadido directamente en el método, se vería así:
+Recapitulando, el hash que recibe como parámetro `Drawer.init` de ser añadido directamente en el método, se vería así:
 
 ```JS
 Drawer.init({
