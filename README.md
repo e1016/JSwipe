@@ -6,12 +6,12 @@
 Create a beauty and practical nav drawer (like material drawer) easily
 
 Direct Library Links:
-* https://e1016.github.io/js-wipe/drawer.min.js
-* https://e1016.github.io/js-wipe/drawer.min.css
+* https://eliseog.github.io/js-wipe/drawer.min.js
+* https://eliseog.github.io/js-wipe/drawer.min.css
 
 ## Requirements
 
-[material icons](https://material.io/icons/) and [Roboto Font](https://fonts.google.com/specimen/Roboto) is necessary for the correct functioning. You can view here an [live example](https://e1016.github.io/js-wipe/) the gestures only works for **mobile devices**
+[material icons](https://material.io/icons/) and [Roboto Font](https://fonts.google.com/specimen/Roboto) is necessary for the correct functioning. You can view here an [live example](https://eliseog.github.io/js-wipe/) the gestures only works for **mobile devices**
 
 ![Swipe Drawer Screenshot](screenshots/ss.png "Swipe Drawer ss")
 ---
