@@ -1,11 +1,11 @@
 
-let Drawer = {
+var Drawer = {
 	init ( bundle ) {
 		this.cacheDOM();
 		this.bindListener();
 		this.draggAvalible = false;
 		if ( bundle ) {
-			let type = typeof bundle
+			var type = typeof bundle
 			if ( type === 'object' ) {
 				this.renderPrepare( bundle.main );
 				this.renderHeader( bundle.main );
@@ -15,19 +15,19 @@ let Drawer = {
 			}
 		}
 	},
-	setTriggerStatus () {
+	setTriggerStatus: function () {
 		try {
 			this.$trigger.classList.toggle('drawer_actived');
 		} catch (err) {}
 	},
-	draggingMenu (e) {
+	draggingMenu: function (e) {
 		this.posX = e.touches[0].clientX
 		if ( this.draggAvalible && this.posX < 300 && this.draggAvalible ) {
 			this.$drawer.style.transform = `translateX(${(-300 + this.posX) + 'px'})`;
 			this.$modal.style.opacity = (this.posX / 200);
 		}
 	},
-	startDraggingMenu (e) {
+	startDraggingMenu: function (e) {
 		if ( e.touches[0].clientX < 20 && !this.$drawer.classList.contains('actived') ) {
 			this.draggAvalible = true;
 			this.$modal.style.display = 'block';
@@ -35,7 +35,7 @@ let Drawer = {
 			this.draggAvalible = true;
 		}
 	},
-	disableDraggingMenu () {
+	disableDraggingMenu: function () {
 		this.$drawer.style.transition = '0.2s ease';
 		this.$modal.style.transition = '0.2s ease';
 		if ( this.posX > 100 && this.draggAvalible && !this.$drawer.classList.contains('actived') ) {
@@ -71,7 +71,7 @@ let Drawer = {
 			this.$modal.style.transition = 'none';
 		}, 200);
 	},
-	controlDrawer () {
+	controlDrawer: function () {
 		this.$drawer.style.transition = '0.2s ease';
 		this.$modal.style.transition = '0.2s ease';
 		if ( this.$drawer.classList.contains('actived')) {
@@ -96,7 +96,7 @@ let Drawer = {
 			this.$modal.style.transition = 'none';
 		}, 200);
 	},
-	renderPrepare () {
+	renderPrepare: function () {
 		this.$drawer.innerHTML = `
 			<div class="__header"></div>
 			<div class="__menu"></div>
@@ -104,7 +104,7 @@ let Drawer = {
 		this.$_header = this.$drawer.querySelector('.__header');
 		this.$_menu = this.$drawer.querySelector('.__menu');
 	},
-	renderHeader ( bundle ) {
+	renderHeader: function ( bundle ) {
 		this.$_header.setAttribute('style', `background-image: url('${ bundle.background }')`)
 		this.$_header.innerHTML = `
 			<span class="__user_photo" style="background-image: url('${ bundle.photo }')"></span>
@@ -112,15 +112,15 @@ let Drawer = {
 			<span class="__sub_title">${ bundle.subtitle }</span>
 		`;
 	},
-	renderOptions ( bundle ) {
+	renderOptions: function ( bundle ) {
 
-		let itemTemporal = '';
+		var itemTemporal = '';
 		bundle.forEach( ( item, index ) => {
 
 			if ( item.separator ) {
 				itemTemporal += `<li class="__menu_separator"><hr> <p>${ item.separator }</p></li>`;
 			} else {
-				itemTemporal += '<li>';
+				itemTemporal += '<li>'; 
 				if ( item.icon && item.label && item.action ) {
 					
 					if ( item.action ) {
@@ -155,7 +155,7 @@ let Drawer = {
 
 		this.$_menu.innerHTML = '<ul class="__menu_items">' + itemTemporal + '</ul>';
 	},
-	bindListener () {
+	bindListener: function () {
 		window.addEventListener('touchstart', this.startDraggingMenu.bind(this));
 		window.addEventListener('touchend', this.disableDraggingMenu.bind(this));
 		window.addEventListener('touchmove', this.draggingMenu.bind(this));
@@ -164,7 +164,7 @@ let Drawer = {
 			this.$trigger.addEventListener('click', this.controlDrawer.bind(this));
 		} catch ( err ) {}
 	},
-	cacheDOM () {
+	cacheDOM: function () {
 		this.$drawer = document.getElementById('drawer_js');
 		this.$modal = document.querySelector('.__modal_drawer');
 		try {
