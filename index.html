@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<title>js swipe</title>
+	<link rel="icon" href="https://raw.githubusercontent.com/eliseog/js-swipe/master/screenshots/js-swipe.png">
+	<link rel="stylesheet" type="text/css" href="sources/extra.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<!--script type="text/javascript" src="https://eliseog.github.io/js-swipe/drawer.js"></script>
+	<link rel="stylesheet" href="https://eliseog.github.io/js-swipe/drawer.css"-->
+	<script type="text/javascript" src="drawer.min.js"></script>
+	<link rel="stylesheet" href="drawer.min.css">
+</head>
+<body>
+	<span class="__modal_drawer"></span> <!-- opacity background modal -->
+	<div id="drawer_js"></div> <!-- drawer container -->
+	<button id="mdrawer_trgger">toggle menu</button>
+	<img src="sources/JSwipe.png">
+	<h1>
+		<small><small><small>
+			swipe from left edge of screen
+		</small></small></small>
+		<br><br>
+		<small><small><small><small>
+			 activate the mobile device simulation on your PC ( mobile toolbar in chrome ) for test it, fork or learn <a href="https://github.com/e1016/JSwipe">this project in GitHub</a>
+		</small></small></small></small>
+	</h1>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	// define a function, for test menu item function binding
+	function share () {
+
+		alert( 'You are sharing this wea china!' )
+
+	}
+
+	// define our header section
+	let headerSection = {
+		background: 'sources/bg.jpg',
+		photo: 'sources/cobie-smulders.jpg',
+		title: 'Cobie Smulders',
+		subtitle: 'exam@mail.com',
+	}
+
+	// define our menu items
+	let menuItems = [{
+		icon: 'account_circle', // <- define material icon
+		label: 'Mi perfil', // <- define label for item
+		action: '/profile' // <- define URL
+	},{
+		icon: 'favorite',
+		label: 'Favoritos',
+		action: '/profile'
+	},{
+		icon: 'share',
+		label: 'Compartir',
+		action: share // <- define functrion that will be executed with click event
+	},{
+		separator: 'settings'
+	},{
+		icon: 'settings_applications',
+		label: 'Ajustes',
+		action: '/profile'
+	}]
+
+	document.addEventListener('DOMContentLoaded', function() { // <- wait for load DOM
+
+		// initializing and setting our nav drawer
+		Drawer.init({
+			main: headerSection,
+			menu: menuItems
+		})
+
+	})
+</script>
